@@ -1,7 +1,7 @@
 
 # IDE 
-./idea
+**.idea/
 
 # npm
 
-package-lock.json
+**/package-lock.json
