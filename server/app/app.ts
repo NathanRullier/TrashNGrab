@@ -7,6 +7,8 @@ import * as cors from "cors";
 import Types from "./types";
 import { injectable, inject } from "inversify";
 import { Routes } from "./routes";
+import { SignupRouter } from "./routes/signup/signuprouter";
+import { SigninRouter } from "./routes/signin/signinrouter";
 
 @injectable()
 export class Application {
@@ -14,7 +16,10 @@ export class Application {
     private readonly internalError: number = 500;
     public app: express.Application;
 
-    public constructor(@inject(Types.Routes) private api: Routes) {
+    public constructor(@inject(Types.Routes) private api: Routes,
+            @inject(Types.SignupRouter) private signupRouter: SignupRouter, 
+            @inject(Types.SigninRouter) private signinRouter: SigninRouter) {
+
         this.app = express();
 
         this.config();
@@ -38,6 +43,8 @@ export class Application {
         router.use(this.api.routes);
 
         this.app.use(router);
+        this.app.use(this.signupRouter.url, this.signupRouter.routes);
+        this.app.use(this.signinRouter.url, this.signinRouter.routes);
 
         this.errorHandeling();
     }
