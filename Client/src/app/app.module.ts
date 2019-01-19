@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagePresentationComponent } from './page-presentation/page-presentation.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PagePresentationComponent
+    PagePresentationComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
