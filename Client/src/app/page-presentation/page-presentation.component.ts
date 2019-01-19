@@ -5,7 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './page-presentation.component.html',
   styleUrls: ['./page-presentation.component.css']
 })
+
+
 export class PagePresentationComponent implements OnInit {
+
 
   constructor() { }
 
