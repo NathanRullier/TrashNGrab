@@ -13,7 +13,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppComponent,
     PagePresentationComponent,
     HomePageComponent,
-    MapComponent
+    MapComponent,
+    PagePresentationComponent
   ],
   imports: [
     BrowserModule,
