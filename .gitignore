@@ -3,5 +3,5 @@
 **.idea/
 
 # npm
-
-package-lock.json
+server/package-lock.json
+Client/package-lock.json
