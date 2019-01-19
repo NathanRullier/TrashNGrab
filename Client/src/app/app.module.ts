@@ -10,8 +10,8 @@ import { MapComponent } from './map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
-    PagePresentationComponent,
+    MapComponent,
+    PagePresentationComponent
   ],
   imports: [
     BrowserModule,
