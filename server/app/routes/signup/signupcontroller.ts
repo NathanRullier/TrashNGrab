@@ -4,6 +4,8 @@ import  {User} from "../../../../common/communication/user";
 import Types from "../../types";
 import {DatabaseService} from "../../database/dataservice"
 import {EmailService} from "../../email/emailservice";
+import { Consumer } from "../../routes/users/consumer";
+import { Producer } from "../../routes/users/producer";
 
 @injectable()
 export class SignupController {
@@ -12,9 +14,21 @@ export class SignupController {
                        @inject (Types.EmailService) private emailService: EmailService) {}
 
     public signup(req: Request, res: Response): void {
-        const userReq : User = req.body;
+        let userReq;
         try {
-            this.DatabaseService.add(userReq);
+            
+
+            
+            if (req.params.type == "consumer") {
+                    userReq = new Consumer(req.body.name, req.body.password, req.body.email);
+                    this.DatabaseService.addConsumer(userReq);
+                }
+            else
+                {
+                    userReq = new Producer(req.body.name, req.body.password, req.body.email, req.body.adress, req.body.zipcode);
+                    this.DatabaseService.addProducer(userReq);
+                }
+                
             // this.emailService.sendGreeting(userReq.email);
 
         } catch(error) {
