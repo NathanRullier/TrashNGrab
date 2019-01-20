@@ -3,6 +3,7 @@ import {inject, injectable} from "inversify";
 import  {User} from "../../../../common/communication/user";
 import Types from "../../types";
 import {DatabaseService} from "../../database/dataservice"
+import {EmailService} from "../../email/emailservice";
 
 @injectable()
 export class SignupController {
@@ -13,6 +14,10 @@ export class SignupController {
         const userReq : User = req.body;
         try {
             this.DatabaseService.add(userReq);
+
+            const emailService: EmailService = new EmailService();
+            emailService.sendGreeting(userReq.email);
+
         } catch(error) {
             res.status(400);
             res.json(error);
