@@ -13,8 +13,8 @@ import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    PagePresentationComponent,
-    MapComponent
+    MapComponent,
+    PagePresentationComponent
   ],
   imports: [
     BrowserModule,

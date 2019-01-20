@@ -1,18 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-page-presentation',
   templateUrl: './page-presentation.component.html',
-  styleUrls: ['./page-presentation.component.css']
+  styleUrls: ['./page-presentation.component.css'],
+
 })
 
 
 export class PagePresentationComponent implements OnInit {
 
 
+  
   constructor() { }
 
   ngOnInit() {
   }
+  function() {
+
+    ('#login-form-link').click(function(e) {
+      ("#login-form").delay(100).fadeIn(100);
+      ("#register-form").fadeOut(100);
+      ('#register-form-link').removeClass('active');
+      (this).addClass('active');
+      e.preventDefault();
+	  });
+	  ('#register-form-link').click(function(e) {
+      ("#register-form").delay(100).fadeIn(100);
+      ("#login-form").fadeOut(100);
+      ('#login-form-link').removeClass('active');
+      (this).addClass('active');
+		  e.preventDefault();
+	  });
+
+  };
 
 }
