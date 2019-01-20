@@ -11,7 +11,6 @@ import { SigninRouter} from "./routes/signin/signinrouter";
 import { UserValidationService } from "./routes/signup/services/userValidationService";
 import { DatabaseService } from "./database/dataservice";
 import {EmailService} from "./email/emailservice";
-import { UserConnectionService } from "./routes/users/service/userconnectionservice";
 
 const container: Container = new Container();
 
@@ -27,6 +26,5 @@ container.bind(Types.SigninRouter).to(SigninRouter);
 container.bind(Types.UserValidationService).to(UserValidationService);
 container.bind(Types.DatabaseService).to(DatabaseService).inSingletonScope();
 container.bind(Types.EmailService).to(EmailService);
-container.bind(Types.UserConnectionService).to(UserConnectionService);
 
 export { container };

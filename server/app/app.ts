@@ -9,6 +9,8 @@ import { injectable, inject } from "inversify";
 import { Routes } from "./routes";
 import { SignupRouter } from "./routes/signup/signuprouter";
 import { SigninRouter } from "./routes/signin/signinrouter";
+import {SubscribeController} from "./routes/subscribe/subscribecontroller";
+import {SubscribeRouter} from "./routes/subscribe/subscriberouter";
 
 @injectable()
 export class Application {
@@ -18,7 +20,8 @@ export class Application {
 
     public constructor(@inject(Types.Routes) private api: Routes,
             @inject(Types.SignupRouter) private signupRouter: SignupRouter, 
-            @inject(Types.SigninRouter) private signinRouter: SigninRouter) {
+            @inject(Types.SigninRouter) private signinRouter: SigninRouter,
+            @inject(Types.SubscribeRouter) private subscribeRouter: SubscribeRouter) {
 
         this.app = express();
 
@@ -43,6 +46,7 @@ export class Application {
         router.use(this.api.routes);
 
         this.app.use(router);
+        this.app.use(this.subscribeRouter.url, this.subscribeRouter.routes);
         this.app.use(this.signupRouter.url, this.signupRouter.routes);
         this.app.use(this.signinRouter.url, this.signinRouter.routes);
 

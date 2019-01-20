@@ -48,6 +48,7 @@
     "tslint": "~5.9.1",
     "tslint-eslint-rules": "5.4.0",
     "tslint-microsoft-contrib": "5.2.0",
-    "typescript": "~2.9.2"
+    "typescript": "~2.9.2",
+    "ts-enum-util": "latest"
   }
 }
