@@ -55,8 +55,7 @@ export class DatabaseService{
             if((name === user.name || name === user.email) && password === user.password)
                 return user;
         }
-        return new User("abd", "as", "asd");
-        //throw new UserError(["User not found"]);
+        throw new UserError(["User not found"]);
 
     }
 

@@ -15,7 +15,13 @@ export class SignupController {
         const userReq : User = req.body;
         try {
             this.DatabaseService.add(userReq);
+<<<<<<< HEAD
             // this.emailService.sendGreeting(userReq.email);
+=======
+
+            const emailService: EmailService = new EmailService();
+            // emailService.sendGreeting(userReq.email);
+>>>>>>> commit before change of data
 
         } catch(error) {
             res.status(400);
