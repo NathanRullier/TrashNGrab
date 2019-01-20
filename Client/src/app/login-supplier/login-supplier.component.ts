@@ -33,9 +33,7 @@ export class LoginSupplierComponent implements OnInit {
     this.Address = (document.getElementById("Address") as HTMLInputElement).value;
     this.ZipCode = (document.getElementById("Zip-Code") as HTMLInputElement).value;
 
-    // let post_1 = 
-    // console.log(post_1);
-    this.http.post('http://localhost:3000/signup/producer', {
+    let post_1 = {
 
       "name": this.firstName + this.lastName,
       "password": this.Password,
@@ -43,7 +41,9 @@ export class LoginSupplierComponent implements OnInit {
       "adress": this.Address,
       "zipcode": this.ZipCode
 
-    }).subscribe(data=>{console.log(data)});
+    }
+    console.log(post_1);
+    this.http.post('http://localhost:3000/signup/producer', (post_1)).subscribe(data=>{console.log(data)});
 
   }
 }
