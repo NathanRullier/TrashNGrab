@@ -8,6 +8,7 @@ import {PagePresentationComponent} from './page-presentation/page-presentation.c
 import {LoginClientComponent} from './login-client/login-client.component';
 import {LoginSupplierComponent} from './login-supplier/login-supplier.component';
 import { CommonModule } from '@angular/common';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
  
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'toHome', component: HomePageComponent },
   { path: 'toLoginSupplier', component: LoginSupplierComponent },
   { path: 'toLoginClient', component: LoginClientComponent },
+  { path: 'toMap', component: MapComponent},
 ];
 
 @NgModule({
