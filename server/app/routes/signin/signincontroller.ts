@@ -18,11 +18,10 @@ export class SigninController {
             if (req.params.type == "consumer") {
                 userReq = this.UserConnectionService.connectConsumer(name,password);
             }
-        else
+            else
             {
                 userReq = this.UserConnectionService.connectProducer(name,password);
             }
-            
 
         } catch (error) {
             res.status(401);
