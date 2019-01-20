@@ -23,6 +23,6 @@ container.bind(Types.SignupRouter).to(SignupRouter);
 container.bind(Types.SigninController).to(SigninController);
 container.bind(Types.SigninRouter).to(SigninRouter);
 container.bind(Types.UserValidationService).to(UserValidationService);
-container.bind(Types.DatabaseService).to(DatabaseService);
+container.bind(Types.DatabaseService).to(DatabaseService).inSingletonScope();
 
 export { container };

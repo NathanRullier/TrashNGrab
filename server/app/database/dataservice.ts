@@ -11,7 +11,8 @@ export class DatabaseService{
 
     public constructor(@inject(Types.UserValidationService) private UserValidationService: UserValidationService){
         this.database = new Database();
-    }
+        console.log("newData");
+        }
     
     public add(user: User){
         
@@ -47,6 +48,29 @@ export class DatabaseService{
         }));  
     
     }
+
+    public getUser(name: string, password: string): User  {
+        
+        for(let user of this.database.users) {
+            if((name === user.name || name === user.email) && password === user.password)
+                return user;
+        }
+        return new User("abd", "as", "asd");
+        //throw new UserError(["User not found"]);
+
+    }
+
+    public valid(user: User): boolean {
+
+        for(let use of this.database.users) {
+
+            if((user.name == use.name || user.email == use.email) && user.password == use.password)
+                return true;
+
+        }
+        return false;
+
+    } 
     
 
 }

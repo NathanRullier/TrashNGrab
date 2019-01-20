@@ -18,8 +18,6 @@ export class SignupController {
             res.json(error);
             return;
         }
-        console.log(this.DatabaseService.contains(userReq));
-        res.status(201);
         res.json({ "type": req.params.type, "user:": userReq});
     }
 
