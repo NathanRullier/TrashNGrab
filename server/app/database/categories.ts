@@ -1,6 +1,6 @@
 export enum Categories {
-    "Fruits-vegetable",
-    "Meant-poultry",
+    "FruitsVegetable",
+    "MeatPoultry",
     "Electronics",
-    "House-furniture"
+    "HouseFurniture"
 }

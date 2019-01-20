@@ -13,5 +13,6 @@ export default  {
         DatabaseService: Symbol("DatabaseService"),
         EmailService: Symbol("EmailService"),
         SubscribeController: Symbol("SubscribeController"),
-        SubscribeRouter: Symbol("SubscribeRouter")
+        SubscribeRouter: Symbol("SubscribeRouter"),
+        SubscriptionManagement: Symbol("SubscriptionManagement")
 };

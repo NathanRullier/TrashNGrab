@@ -11,6 +11,9 @@ import { SigninRouter} from "./routes/signin/signinrouter";
 import { UserValidationService } from "./routes/signup/services/userValidationService";
 import { DatabaseService } from "./database/dataservice";
 import {EmailService} from "./email/emailservice";
+import {SubscribeController} from "./routes/subscribe/subscribecontroller";
+import {SubscribeRouter} from "./routes/subscribe/subscriberouter";
+import {SubscriptionManagement} from "./routes/subscribe/subscriptionmanagment";
 
 const container: Container = new Container();
 
@@ -26,5 +29,7 @@ container.bind(Types.SigninRouter).to(SigninRouter);
 container.bind(Types.UserValidationService).to(UserValidationService);
 container.bind(Types.DatabaseService).to(DatabaseService).inSingletonScope();
 container.bind(Types.EmailService).to(EmailService);
-
+container.bind(Types.SubscribeController).to(SubscribeController);
+container.bind(Types.SubscribeRouter).to(SubscribeRouter);
+container.bind(Types.SubscriptionManagement).to(SubscriptionManagement);
 export { container };

@@ -19,7 +19,7 @@ export class SubscribeRouter implements RouterInterface {
         }));
 
         router.post("/:category", (req: Request, res: Response) => {
-            this.subscribeController.addUserToCategorie(req, res);
+            this.subscribeController.addUserToCategory(req, res);
         });
         return router;
     }
