@@ -35,10 +35,22 @@ export class LoginClientComponent implements OnInit {
       "email": this.emailAddress
 
     }
-    console.log(this.firstName+ this.lastName);
-    console.log(this.Password);
-    console.log(this.emailAddress);
-    console.log(post_1);
     this.http.post('http://localhost:3000/signup/consumer', (post_1)).subscribe(data=>{console.log(data)});
     }
+
+    onSignInClient(): void{
+
+      const name = (document.getElementById("login-username") as HTMLInputElement).value;
+
+      this.Password = (document.getElementById("login-password") as HTMLInputElement).value;
+  
+  
+      let post = {
+  
+        "name": name,
+        "password": this.Password
+  
+      }
+      this.http.post('http://localhost:3000/signin/consumer', (post)).subscribe(data=>{console.log(data)});
+      }
 }
