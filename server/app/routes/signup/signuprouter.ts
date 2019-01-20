@@ -1,6 +1,6 @@
 import {Request, Response, Router} from "express";
 import {inject, injectable} from "inversify";
-import {RouterInterface} from "../../routerInterface";
+import {RouterInterface} from "../../routerinterface";
 import Types from "../../types";
 import { SignupController } from "./signupcontroller";
 
