@@ -18,9 +18,10 @@ export class MapComponent implements OnInit {
   
   test = [ ];
   ngOnInit () {
-    this.http.get( 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyD4w4AH-yl2Uc5t1ONtdPjMxlLVI8ImyxI' ).subscribe( data => {
-      this.test.push([data.results[0].geometry.location.lat, data.results[0].geometry.location.lng]);
-      console.log(this.test);
+      this.http.get( 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyD4w4AH-yl2Uc5t1ONtdPjMxlLVI8ImyxI' ).subscribe( data => {
+      console.log(data);
+      //this.test.push([data.results[0].geometry.location.lat, data.results[0].geometry.location.lng]);
+      
     },
       err => {
         console.log( "Oops!" );
