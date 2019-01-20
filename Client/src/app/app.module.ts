@@ -9,12 +9,20 @@ import { MapComponent } from './map/map.component';
 import { AgmCoreModule } from '@agm/core';
 
 import {HttpClientModule} from '@angular/common/http';
+import { ProductComponent } from './product/product.component';
+import { AboutComponent } from './about/about.component';
+import { HomePageComponent} from './home-page/home-page.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    PagePresentationComponent
+    PagePresentationComponent,
+    ProductComponent,
+    AboutComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +30,10 @@ import {HttpClientModule} from '@angular/common/http';
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyD4w4AH-yl2Uc5t1ONtdPjMxlLVI8ImyxI'
     }),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
