@@ -3,6 +3,8 @@ import {inject, injectable} from "inversify";
 import { User } from "../../../common/communication/user";
 import Types from "../types";
 import { UserValidationService } from "../routes/signup/services/userValidationService";
+import { Consumer } from "../routes/users/consumer";
+import { Producer } from "../routes/users/producer";
 
 @injectable()
 export class DatabaseService{
@@ -14,7 +16,7 @@ export class DatabaseService{
         console.log("newData");
         }
     
-    public add(user: User){
+    public addConsumer(user: Consumer){
         
         let errors : string[] = []
         this.UserValidationService.validateUser(user, errors);
@@ -23,7 +25,21 @@ export class DatabaseService{
             errors.push("Email or Username already used");
         
         if(errors.length == 0)
-            this.database.add(user);
+            this.database.addConsumer(user);
+        else
+            throw new UserError(errors);
+
+    }
+    public addProducer(user: Producer){
+        
+        let errors : string[] = []
+        this.UserValidationService.validateUser(user, errors);
+        
+        if (this.contains(user))
+            errors.push("Email or Username already used");
+        
+        if(errors.length == 0)
+            this.database.addProducer(user);
         else
             throw new UserError(errors);
 
@@ -49,14 +65,42 @@ export class DatabaseService{
     
     }
 
-    public getUser(name: string, password: string): User  {
+    public getConsumer(name: string, password: string): Consumer  {
         
-        for(let user of this.database.users) {
+        for(let user of this.database.consumers) {
             if((name === user.name || name === user.email) && password === user.password)
                 return user;
         }
         throw new UserError(["User not found"]);
 
+    }
+
+    public getProducer(name: string, password: string): Producer  {
+        
+        for(let user of this.database.producers) {
+            if((name === user.name || name === user.email) && password === user.password)
+                return user;
+        }
+        throw new UserError(["User not found"]);
+
+    }
+
+    public getConsumers(): Consumer[] {
+
+        let consumers: Consumer[] = [];
+        this.database.consumers.forEach(use => {
+            consumers.push(use);
+        });
+        return consumers;
+    }
+    
+    public getProducers(): Producer[] {
+
+        let producers: Producer[] = [];
+        this.database.producers.forEach(use => {
+            producers.push(use);
+        });
+        return producers;
     }
 
     public valid(user: User): boolean {

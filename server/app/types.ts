@@ -11,5 +11,9 @@ export default  {
         SigninRouter: Symbol("SigninRouter"),
         UserValidationService: Symbol("UserValidationService"),
         DatabaseService: Symbol("DatabaseService"),
+<<<<<<< HEAD
         EmailService: Symbol("EmailService")
+=======
+        UserConnectionService: Symbol("UserConnectionService")
+>>>>>>> marche
 };

@@ -10,7 +10,11 @@ import { SigninController} from "./routes/signin/signincontroller";
 import { SigninRouter} from "./routes/signin/signinrouter";
 import { UserValidationService } from "./routes/signup/services/userValidationService";
 import { DatabaseService } from "./database/dataservice";
+<<<<<<< HEAD
 import {EmailService} from "./email/emailservice";
+=======
+import { UserConnectionService } from "./routes/users/service/userconnectionservice";
+>>>>>>> marche
 
 const container: Container = new Container();
 
@@ -25,6 +29,10 @@ container.bind(Types.SigninController).to(SigninController);
 container.bind(Types.SigninRouter).to(SigninRouter);
 container.bind(Types.UserValidationService).to(UserValidationService);
 container.bind(Types.DatabaseService).to(DatabaseService).inSingletonScope();
+<<<<<<< HEAD
 container.bind(Types.EmailService).to(EmailService);
+=======
+container.bind(Types.UserConnectionService).to(UserConnectionService);
+>>>>>>> marche
 
 export { container };
