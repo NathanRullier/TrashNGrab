@@ -14,15 +14,10 @@ export class SignupController {
                        @inject (Types.EmailService) private emailService: EmailService) {}
 
     public signup(req: Request, res: Response): void {
-        
         let userReq;
         try {
-<<<<<<< HEAD
-            this.DatabaseService.add(userReq);
-<<<<<<< HEAD
-            // this.emailService.sendGreeting(userReq.email);
-=======
-=======
+            
+
             
             if (req.params.type == "consumer") {
                     userReq = new Consumer(req.body.name, req.body.password, req.body.email);
@@ -34,11 +29,7 @@ export class SignupController {
                     this.DatabaseService.addProducer(userReq);
                 }
                 
->>>>>>> marche
-
-            const emailService: EmailService = new EmailService();
-            // emailService.sendGreeting(userReq.email);
->>>>>>> commit before change of data
+            // this.emailService.sendGreeting(userReq.email);
 
         } catch(error) {
             res.status(400);
