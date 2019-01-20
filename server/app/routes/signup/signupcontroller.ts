@@ -15,6 +15,7 @@ export class SignupController {
 
     public signup(req: Request, res: Response): void {
         let userReq;
+        console.log(req.body);
         try {
             
 

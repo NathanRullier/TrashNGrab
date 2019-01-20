@@ -4,7 +4,7 @@ import { User } from "../../../../../common/communication/user"
 @injectable()
 export class UserValidationService {
 
-    private readonly MAX_LENGTH: number = 10;
+    private readonly MAX_LENGTH: number = 20;
     private readonly MIN_LENGTH: number = 3;
     private readonly REGEX: RegExp = new RegExp(/^[a-z0-9]+$/i);
 
