@@ -1,11 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-home-page></app-home-page>
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-<app-page-presentation></app-page-presentation>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class = "w3-container">
+  <div class="jumbotron jumbotron-fluid">
+    <h1 style="text-align:center">{{title}}</h1>      
+    
+
+      
+      <div class="dropdown" style="width : 800px;">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a routerLink = "/toLoginClient">I am a consumer</a>
+          <a routerLink = "/toLoginSupplier">I am a Producer</a>
+        </div>
+      </div>
+
+    </div>  
 </div>
+
 
 
 <router-outlet></router-outlet>
