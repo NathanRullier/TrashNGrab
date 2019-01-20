@@ -15,6 +15,7 @@ import { HomePageComponent} from './home-page/home-page.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
