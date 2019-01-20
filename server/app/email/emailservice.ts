@@ -1,6 +1,7 @@
 import {createTransport} from "nodemailer";
+import {injectable} from "inversify";
 
-
+@injectable()
 export class EmailService {
 
     public sendGreeting(emailAddress: string){

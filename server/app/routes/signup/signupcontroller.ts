@@ -8,15 +8,14 @@ import {EmailService} from "../../email/emailservice";
 @injectable()
 export class SignupController {
 
-    public constructor(@inject (Types.DatabaseService) private DatabaseService: DatabaseService) {}
+    public constructor(@inject (Types.DatabaseService) private DatabaseService: DatabaseService,
+                       @inject (Types.EmailService) private emailService: EmailService) {}
 
     public signup(req: Request, res: Response): void {
         const userReq : User = req.body;
         try {
             this.DatabaseService.add(userReq);
-
-            const emailService: EmailService = new EmailService();
-            emailService.sendGreeting(userReq.email);
+            // this.emailService.sendGreeting(userReq.email);
 
         } catch(error) {
             res.status(400);

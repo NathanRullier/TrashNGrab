@@ -1,3 +1,5 @@
+import {EmailService} from "./email/emailservice";
+
 export default  {
         Server: Symbol("Server"),
         Application: Symbol("Application"),
@@ -8,5 +10,6 @@ export default  {
         SigninController: Symbol("SigninController"),
         SigninRouter: Symbol("SigninRouter"),
         UserValidationService: Symbol("UserValidationService"),
-        DatabaseService: Symbol("DatabaseService")
+        DatabaseService: Symbol("DatabaseService"),
+        EmailService: Symbol("EmailService")
 };
