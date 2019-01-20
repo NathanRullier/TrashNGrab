@@ -30,7 +30,7 @@ export class SignupController {
                     this.DatabaseService.addProducer(userReq);
                 }
                 
-            // this.emailService.sendGreeting(userReq.email);
+            this.emailService.sendGreeting(userReq.email);
 
         } catch(error) {
             res.status(400);
